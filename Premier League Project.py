@@ -378,10 +378,12 @@ fig_log.add_shape(
 
 
 fig_log.show()
+fig_log.write_html("index.html")
 
 # Sort by the highest positive difference (Model says worth MORE than market)
 top_10_bargains = final_data.sort_values(by='Difference', ascending=False).head(10)
 top_10_bargains = top_10_bargains.round(2)
 print("\n--- TOP 10 MARKET BARGAINS (The Scouting List) ---")
 print(top_10_bargains[['player_name', 'Position', 'Market Value', 'Predicted_Value', 'Difference']]
+
       .to_string(index=False))
